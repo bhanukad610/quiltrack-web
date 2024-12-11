@@ -1,6 +1,12 @@
-<div class="notes-list">
-    <div *ngFor="let note of notes" class="note-card">
-        <h3>{{note.title}}</h3>
-        <p>{{note.content}}</p>
+<div class="container">
+    <div class="filter-container">
+        <input type="text" [(ngModel)]="filterText" placeholder="Filter notes by title or content" />
+    </div>
+
+    <div class="notes-list">
+        <div *ngFor="let note of filteredNotes" class="note-card">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.content }}</p>
+        </div>
     </div>
 </div>
