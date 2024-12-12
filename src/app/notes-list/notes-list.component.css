@@ -48,3 +48,17 @@
   font-size: 14px;
   color: #666;
 }
+
+.add-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
