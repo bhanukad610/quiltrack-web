@@ -10,18 +10,18 @@ import { NotesService } from '../shared/notes.service';
   styleUrl: './note-creation.component.css'
 })
 export class NoteCreationComponent {
-  constructor(private router: Router, private notesService: NotesService){}
+  constructor(private router: Router, private notesService: NotesService) { }
 
-  note = {title: '', content: ''};
+  note = { title: '', content: '' };
 
-  onSubmit(){
-    if(this.note.title != '' || this.note.content != ''){
+  onSubmit() {
+    if (this.note.title != '' || this.note.content != '') {
       this.notesService.addNote(this.note);
       this.navigateToHome();
     }
   }
 
-  navigateToHome(){
+  navigateToHome() {
     this.router.navigate(['/']);
   }
 }
