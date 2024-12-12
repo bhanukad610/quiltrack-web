@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotesService } from '../shared/notes.service';
 
 @Component({
   selector: 'app-note-creation',
@@ -9,15 +10,18 @@ import { Router } from '@angular/router';
   styleUrl: './note-creation.component.css'
 })
 export class NoteCreationComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router, private notesService: NotesService){}
 
   note = {title: '', content: ''};
 
   onSubmit(){
     if(this.note.title != '' || this.note.content != ''){
-      console.log('Note created:', this.note);
+      this.notesService.addNote(this.note);
+      this.navigateToHome();
     }
-    
-    this.router.navigate(['/']); // Navigate back to the notes list
+  }
+
+  navigateToHome(){
+    this.router.navigate(['/']);
   }
 }
