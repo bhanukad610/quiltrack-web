@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-notes-list',
@@ -9,6 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './notes-list.component.css'
 })
 export class NotesListComponent {
+  constructor(private router: Router){}
+
   notes = [
     {title: 'Note 1', content: 'content of note 1'},
     {title: 'Note 2', content: 'content of note 2'},
@@ -22,6 +25,10 @@ export class NotesListComponent {
       notes.title.toLowerCase().includes(this.filterText.toLowerCase()) ||
       notes.content.toLowerCase().includes(this.filterText.toLowerCase())
     )
+  }
+
+  navigateToCreate(){
+    this.router.navigate(['/create']);
   }
 
 }
