@@ -13,11 +13,12 @@ import { Note } from '../models/note';
 export class NoteCreationComponent {
   constructor(private router: Router, private notesService: NotesService) { }
 
-  note : Note = new Note('', '');
+  note = { title: '', content: '' };
 
   onSubmit() {
     if (this.note.title != '' || this.note.content != '') {
-      this.notesService.addNote(this.note);
+      let noteObj = new Note(this.notesService.getNotesCount() + 1, this.note.title, this.note.content);
+      this.notesService.addNote(noteObj);
       this.navigateToHome();
     }
   }
