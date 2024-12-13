@@ -4,7 +4,7 @@
     </div>
 
     <div class="notes-list">
-        <div *ngFor="let note of filteredNotes" class="note-card">
+        <div *ngFor="let note of filteredNotes" class="note-card" (click)="viewNote(note.id)">
             <h3>{{ note.title }}</h3>
             <p>{{ note.content }}</p>
         </div>

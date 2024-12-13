@@ -18,7 +18,22 @@ export class NotesService {
     )
   }
 
-  addNote(note: { title: string, content: string }) {
+  addNote(note: Note) {
     this.notes.push(note);
+  }
+
+  getGotesCount() {
+    return this.notes.length;
+  }
+
+  getNoteById(id: number) {
+    return this.notes.find((n) => n.id === id);;
+  }
+
+  updateNote(id: number, updatedNote: Note): void {
+    const index = this.notes.findIndex((note) => note.id === id);
+    if (index !== -1) {
+      this.notes[index] = { ...updatedNote };
+    }
   }
 }

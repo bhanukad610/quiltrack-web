@@ -23,4 +23,8 @@ export class NotesListComponent {
     this.router.navigate(['/create']);
   }
 
+  viewNote(id:number){
+    this.router.navigate(['/view', id]);
+  }
+
 }
