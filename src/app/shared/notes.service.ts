@@ -22,7 +22,7 @@ export class NotesService {
     this.notes.push(note);
   }
 
-  getGotesCount() {
+  getNotesCount() {
     return this.notes.length;
   }
 

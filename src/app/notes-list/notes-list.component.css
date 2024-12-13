@@ -50,7 +50,7 @@
 }
 
 .add-button {
-  background-color: #4caf50;
+  background-color: #000000;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -60,5 +60,5 @@
 }
 
 .add-button:hover {
-  background-color: #45a049;
+  background-color: #4d4d4d;
 }

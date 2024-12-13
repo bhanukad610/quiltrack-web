@@ -17,7 +17,7 @@ export class NoteCreationComponent {
 
   onSubmit() {
     if (this.note.title != '' || this.note.content != '') {
-      let noteObj = new Note(this.notesService.getGotesCount() + 1, this.note.title, this.note.content);
+      let noteObj = new Note(this.notesService.getNotesCount() + 1, this.note.title, this.note.content);
       this.notesService.addNote(noteObj);
       this.navigateToHome();
     }
