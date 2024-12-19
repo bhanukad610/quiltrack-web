@@ -22,7 +22,7 @@ export class NoteCreationComponent {
       this.navigateToHome();
     }
     else{
-      alert('Title and content cannot be empty.');
+      alert('Both the Title and content cannot be empty.');
     }
   }
 
