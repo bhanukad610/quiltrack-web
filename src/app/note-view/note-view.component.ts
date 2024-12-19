@@ -29,6 +29,11 @@ export class NoteViewComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.note?.title?.trim() && !this.note?.content?.trim()) {
+      alert('Both title and content are required!');
+      return;
+    }
+
     if (this.note) {
       this.notesService.updateNote(this.note.id, this.note);
     }

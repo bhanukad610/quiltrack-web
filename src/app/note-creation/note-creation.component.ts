@@ -16,10 +16,13 @@ export class NoteCreationComponent {
   note = { title: '', content: '' };
 
   onSubmit() {
-    if (this.note.title != '' || this.note.content != '') {
+    if (this.note.title.trim() || this.note.content.trim()) {
       let noteObj = new Note(this.notesService.getNotesCount() + 1, this.note.title, this.note.content);
       this.notesService.addNote(noteObj);
       this.navigateToHome();
+    }
+    else{
+      alert('Title and content cannot be empty.');
     }
   }
 
