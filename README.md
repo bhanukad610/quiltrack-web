@@ -19,7 +19,7 @@ Quiltrack is a simple note-taking application built with Angular and TypeScript.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/quiltrack.git
+git clone https://github.com/bhanukad610/quiltrack-web.git
 cd quiltrack
 ```
 
