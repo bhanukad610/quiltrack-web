@@ -26,8 +26,8 @@ jobs:
         run: npm install angular-cli-ghpages
 
       - name: Build Angular App
-        run: ng build --output-path=dist/quiltrack-web
-
+        run: ng build
+        
       - name: Verify Build Output
         run: ls -la dist/quiltrack
 
