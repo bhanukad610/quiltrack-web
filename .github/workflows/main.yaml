@@ -23,11 +23,18 @@ jobs:
         run: npm install
 
       - name: Build
-        run: ng build --configuration=production --base-href /quiltrack/
+        run: ng build
 
-      - name: Deploy to Github pages
-        run: |
-          npx angular-cli-ghpages --dir=dist/quiltrack
-        env:
-          CI: true
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'build/'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        env:  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
