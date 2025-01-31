@@ -33,6 +33,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          npx angular-cli-ghpages --no-silent --debug --dir=dist/quiltrack-web
+          npx angular-cli-ghpages --no-silent --dir=dist/quiltrack-web
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
